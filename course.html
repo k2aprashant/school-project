@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="@yield('seo_description')">
+    <meta name="keywords" content="@yield('seo_keywords')">
+    <meta name="author" content="@yield('seo_author')">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="frontend_theme/school_first_theme/image/feva.jpg"
+        type="'frontend_theme/school_first_theme/image/feva.jpg" sizes="16x16">
+    <title>School theme</title>
+
+    <!-- {{-- **** google font **** --}} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+        rel="stylesheet">
+
+    <!-- {{-- **** font awesome ***** --}} -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
+        integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- {{-- ***** owl carousel **** --}} -->
+    <link rel="stylesheet" href="frontend_theme/css_library/owlcarousel.css">
+    <!-- {{-- ***** fancy box **** --}} -->
+    <link rel="stylesheet" href="frontend_theme/css_library/fancybox.css">
+    <!-- {{-- ***** boostrap 4 ******** --}} -->
+    <link rel="stylesheet" href="frontend_theme/css_library/boostrap_min.css">
+    <!-- {{-- ***** custom style sheet ******* --}} -->
+    <link rel="stylesheet" href="frontend_theme/school_first_theme/style/style.css">
+
+    <style>
+        :root {
+            --main_color: #04336B;
+            --second_main_color: #FE6402;
+            --color-2: #000EFF;
+            --color-3: #D4A915;
+            --text-color: #373434d0;
+            --light_blue: #E7F4FD;
+            --white: white;
+            --light-white: #F7F7FB;
+            --black: black;
+            --family-sans: 'Nunito Sans', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_scroll" id="scrollBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <section class="topbar py-2 text-md-left text-center">
+        <div class="container">
+            <div class="topbar_content">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 d-sm-block d-none">
+                        <div class="address">
+                            <small class="m-0 p-0 f700 family-sans">
+                                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                Opposite Union Bank ,Near Post Office, Vijay Path Madhyam Marg , Mansarovar
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+                        <div class="contact">
+                            <span class="phone mr-4">
+                                <a href="tel:{{$basic_site_details[0]->mobile_no}}" class="f600">
+                                    <span class="icon pr-2"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                    <span> 9012345678 </span>
+                                </a>
+                            </span>
+
+                            <span class="email">
+                                <a href="mailto:{{$basic_site_details[0]->email_id}}" class="f600">
+                                    <span class="icon pr-2"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                    <span> demo@gmail.com</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="header_bar sticky-top">
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand mr-md-5" href="#">
+                        <img src="frontend_theme/school_first_theme/image/logo.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto mt-md-0 mt-3">
+                            <li class="nav-item @yield('home_active')">
+                                <a class="nav-link" href="index.html">Home <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item @yield('page_active')">
+                                <a class="nav-link" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item dropdown @yield('nav_link_active')">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Pages
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Pages 1</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Pages 2</a>
+                                </div>
+                            </li>
+                            <li class="nav-item @yield('course_active')">
+                                <a class="nav-link" href="course.html">Courses</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <section class="page_cover pt-md-5">
+        <div class="doted">
+            <img class="img-fluid" src="frontend_theme/school_first_theme/image/dotes.png" alt="">
+        </div>
+        <div class="circle1 circle">
+            <img class="img-fluid" src="frontend_theme/school_first_theme/image/earth.png" alt="">
+        </div>
+        <div class="d-sm-block d-none circle2 circle"></div>
+        <div class="d-sm-block d-none circle3 circle"></div>
+        <div class="d-sm-block d-none circle33 circle"></div>
+    
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="page_text center pb-md-5">
+                        <h1>Course</h1>
+                    </div>
+                </div>
+    
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-lg-block d-none">
+                    <div class="page_image">
+                        <img class="img-fluid" src="frontend_theme/school_first_theme/image/page.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="courses py-5">
+        <div class="container">
+            <div class="course_slider">
+                <div class="slider_body mt-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                            <div class="courses_card p-2">
+                                <div class="courses_img">
+                                    <img class="img-fluid" src="frontend_theme/school_first_theme/image/course1.jpg" alt="">
+                                </div>
+                                <div class="courses_text">
+                                    <h6 class="p-2 text-center mt-4">Graduation(B.tech, B.com, BCA)</h6>
+                                    <p class="m-0 p-0 pt-2 f500">Practical based classes to enhance your analytical thinking and real life experiences with the innovative technology.</p>
+                                    <ul class="m-0 p-0 mt-3">
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Clear your concepts with highly experienced faculties.</span>
+                                        </li>
+    
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Detailed notes are provided for each subject.</span>
+                                        </li>
+                                    </ul>
+                                    <a href="" class="btn my-3 web-btn">Start Course <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                            <div class="courses_card p-2">
+                                <div class="courses_img">
+                                    <img class="img-fluid" src="frontend_theme/school_first_theme/image/course2.jpg" alt="">
+                                </div>
+                                <div class="courses_text">
+                                    <h6 class="p-2 text-center mt-4">Graduation(B.tech, B.com, BCA)</h6>
+                                    <p class="m-0 p-0 pt-2 f500">Practical based classes to enhance your analytical thinking and real life experiences with the innovative technology.</p>
+                                    <ul class="m-0 p-0 mt-3">
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Clear your concepts with highly experienced faculties.</span>
+                                        </li>
+    
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Detailed notes are provided for each subject.</span>
+                                        </li>
+                                    </ul>
+                                    <a href="" class="btn my-3 web-btn">Start Course <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                            <div class="courses_card p-2">
+                                <div class="courses_img">
+                                    <img class="img-fluid" src="frontend_theme/school_first_theme/image/course4.jpg" alt="">
+                                </div>
+                                <div class="courses_text">
+                                    <h6 class="p-2 text-center mt-4">Graduation(B.tech, B.com, BCA)</h6>
+                                    <p class="m-0 p-0 pt-2 f500">Practical based classes to enhance your analytical thinking and real life experiences with the innovative technology.</p>
+                                    <ul class="m-0 p-0 mt-3">
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Clear your concepts with highly experienced faculties.</span>
+                                        </li>
+    
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Detailed notes are provided for each subject.</span>
+                                        </li>
+                                    </ul>
+                                    <a href="" class="btn my-3 web-btn">Start Course <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                            <div class="courses_card p-2">
+                                <div class="courses_img">
+                                    <img class="img-fluid" src="frontend_theme/school_first_theme/image/course3.jpg" alt="">
+                                </div>
+                                <div class="courses_text">
+                                    <h6 class="p-2 text-center mt-4">Graduation(B.tech, B.com, BCA)</h6>
+                                    <p class="m-0 p-0 pt-2 f500">Practical based classes to enhance your analytical thinking and real life experiences with the innovative technology.</p>
+                                    <ul class="m-0 p-0 mt-3">
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Clear your concepts with highly experienced faculties.</span>
+                                        </li>
+    
+                                        <li class="d-flex">
+                                            <span class="pr-1"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                            <span>Detailed notes are provided for each subject.</span>
+                                        </li>
+                                    </ul>
+                                    <a href="" class="btn my-3 web-btn">Start Course <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <div class="footer_container pt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-4">
+                            <div class="footer_card footer_card1">
+                                <h5 class="f600 mb-4">About Us</h5>
+                                <p class="text-justify pr-md-4">Didactic has been among the best educational institution
+                                    in Jaipur specially in Mansarovar since last 7+ years. Didactic sprang into
+                                    existence in 2014 as a dream of three young engineers who dedicated their energy and
+                                    time in making their dream into reality.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-lg-0 mb-4">
+                            <div class="footer_card footer_card2 d-flex justify-content-end flex-column">
+                                <h5 class="f600 mb-4">Quick Links</h5>
+                                <ul>
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <a href="">Home</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <a href="">About Us</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <a href="">Courses</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <a href="">Pages</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <a href="">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-lg-0 mb-4">
+                            <div class="footer_card footer_card2 footer_card3 d-flex justify-content-end flex-column">
+                                <h5 class="f600 mb-4">Our Popular Courses</h5>
+                                <ul>
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-arrow-circle-right"
+                                                aria-hidden="true"></i></span>
+                                        <a href="">Primary Grades (VI-VIII)</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-arrow-circle-right"
+                                                aria-hidden="true"></i></span>
+                                        <a href="">Primary Grades (VI-VIII)</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-arrow-circle-right"
+                                                aria-hidden="true"></i></span>
+                                        <a href="">Foundation Courses (IIT-JEE)</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-arrow-circle-right"
+                                                aria-hidden="true"></i></span>
+                                        <a href="">Foundation Courses (IIT-JEE,NEET)</a>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-arrow-circle-right"
+                                                aria-hidden="true"></i></span>
+                                        <a href="">Foundation Courses (IIT-JEE,NEET)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-4">
+                            <div class="footer_card footer_card2 footer_card4 d-flex justify-content-end flex-column">
+                                <h5 class="f600 mb-4">Contacts</h5>
+                                <ul>
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                        <p class="m-0 p-0">Opposite Union Bank ,Near Post Office, Vijay Path Madhyam
+                                            Marg , Mansarovar</p>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                        <p class="m-0 p-0">+91 9012345678</p>
+                                    </li>
+
+                                    <li class="d-flex mb-2">
+                                        <span class="pr-3"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                        <p class="m-0 p-0">demo@gmail.com</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social_icon py-4">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="">
+                                    <i class="fab fa-google-play"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_bottom py-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-md-left text-center">
+                            <p class="m-0 p-0">Copyright © 2023 Didactic Institute. All Rights Reserved.</p>
+                        </div>
+
+                        <div class="col-md-6 text-md-right text-center">
+                            <p class="m-0 p-0">Designed By : SN Digital Hub India Pvt. Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <script src="frontend_theme/js_library/jquery_ajax.js"></script>
+    <script src="frontend_theme/js_library/bootstrap-popper.js"></script>
+    <script src="frontend_theme/js_library/bootstrap.js"></script>
+    <script src="frontend_theme/js_library/owl_carousel.js"></script>
+    <script src="frontend_theme/js_library/fancybox.js"></script>
+    <script src="frontend_theme/school_first_theme/js/custom.js"></script>
+</body>
+
+</html>
