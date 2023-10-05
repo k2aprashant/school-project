@@ -16,5 +16,5 @@ SetEnvIfNoCase Referer "httrack" bad_referer
 </Files>
 RewriteEngine on
 RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourwebsite.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?https://k2aprashant.github.io/school-project/ [NC]
 RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
