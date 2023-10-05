@@ -1,0 +1,20 @@
+SetEnvIfNoCase User-Agent "^HTTrack" bad_bot
+<Files *>
+    Order Deny,Allow
+    Deny from env=bad_bot
+</Files>
+SetEnvIfNoCase User-Agent "Offline Explorer" bad_bot
+SetEnvIfNoCase User-Agent "WebCopier" bad_bot
+<Files *>
+    Order Deny,Allow
+    Deny from env=bad_bot
+</Files>
+SetEnvIfNoCase Referer "httrack" bad_referer
+<Files *>
+    Order Deny,Allow
+    Deny from env=bad_referer
+</Files>
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourwebsite.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
